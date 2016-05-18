@@ -440,8 +440,11 @@ class Parser
      */
     private function decodeSingleHeader($input)
     {
-        // Remove white space between encoded-words
-        $input = preg_replace('/(=\?[^?]+\?(q|b)\?[^?]*\?=)(\s)+=\?/i', '\1=?', $input);
+        $countOfNewLines = substr_count( $your_string, "\n" );
+        for ($i = 1; $i <= $i; $i++) {
+            // Remove white space between encoded-words
+            $input = preg_replace('/(=\?[^?]+\?(q|b)\?[^?]*\?=)(\s)+=\?/i', '\1=?', $input);
+        }
 
         // For each encoded-word...
         while (preg_match('/(=\?([^?]+)\?(q|b)\?([^?]*)\?=)/i', $input, $matches)) {
